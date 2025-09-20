@@ -5,8 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.dev/license
  */
-import {Component} from '@angular/core';
+import {Component, signal, Signal} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
+import { RecipeModel } from './models';
+import { MOCK_RECIPES } from './mock-recipes';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +17,17 @@ import {RouterOutlet} from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
-  protected title = 'myapp';
+  protected readonly title: Signal<string> = signal('My Recipe Box');
+  protected recipes:RecipeModel[] = MOCK_RECIPES;
+  protected readonly recipe = signal<RecipeModel>(this.recipes[0]);
+  
+
+  protected showRecipe(recipe:RecipeModel): void {
+    console.log(`Show ${recipe} button clicked`);
+    this.recipe.set(recipe);
+    console.log(this.recipe());
+    
+  }
+
+  
 }
