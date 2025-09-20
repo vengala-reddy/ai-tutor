@@ -1,5 +1,14 @@
 <h1>{{title()}}</h1>
 <button (click)="showRecipe(recipes[0])">Show Carbonara</button>
 <button (click)="showRecipe(recipes[1])">Show Salad</button>
-<p>{{recipe().name}}</p>
+<p>{{recipe().name}}
+  <button (click)="incrementServings()">+</button>  {{servingsCount()}}
+  <button (click)="decrementServings()">-</button>
+</p>
 <p>{{recipe().description}}</p>
+<p>Ingredients:</p>
+<ul>
+@for (ingredient of ingredients(); track $index) {
+  <li>{{ingredient.name}} - {{ingredient.quantity}} {{ingredient.unit}}</li>
+}
+</ul>
