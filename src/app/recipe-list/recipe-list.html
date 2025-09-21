@@ -1,14 +1,4 @@
 <button (click)="showRecipe(recipes[0])">Show Carbonara</button>
 <button (click)="showRecipe(recipes[1])">Show Salad</button>
-<p>{{recipe().name}}
-  <button (click)="incrementServings()">+</button>  {{servingsCount()}}
-  <button (click)="decrementServings()">-</button>
-</p>
-<img [src]="recipe().imgUrl" alt="{{recipe().name}}" >
-<p>{{recipe().description}}</p>
-<p>Ingredients:</p>
-<ul>
-@for (ingredient of ingredients(); track $index) {
-  <li>{{ingredient.name}} - {{ingredient.quantity}} {{ingredient.unit}}</li>
-}
-</ul>
+<app-recipe-detail [recipe]="recipe()"></app-recipe-detail>
+
