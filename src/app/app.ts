@@ -37,6 +37,8 @@ export class App {
   protected showRecipe(recipe:RecipeModel): void {
     console.log(`Show ${recipe} button clicked`);
     this.recipe.set(recipe);
+    console.log(recipe.imgUrl);
+    this.servingsCount.set(1);
     console.log(this.recipe());    
   }
   protected incrementServings(): void {
