@@ -1,6 +1,6 @@
 import { RecipeModel } from './models';
 
-export const MOCK_RECIPES: RecipeModel[] = [
+export let MOCK_RECIPES: RecipeModel[] = [
   {
     id: 1,
     name: 'Spaghetti Carbonara',
