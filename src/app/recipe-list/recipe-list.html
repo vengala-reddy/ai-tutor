@@ -1,4 +1,8 @@
-<button (click)="showRecipe(recipes[0])">Show Carbonara</button>
-<button (click)="showRecipe(recipes[1])">Show Salad</button>
+<input type="text" [(ngModel)]="searchTerm">
+<hr>
+<section>
+    @for (recipe of filteredRecipes(); track $index) {
+        <button (click)="showRecipe(recipe)">Show {{recipe.name}}</button>
+    }
+</section>
 <app-recipe-detail [recipe]="recipe()"></app-recipe-detail>
-
