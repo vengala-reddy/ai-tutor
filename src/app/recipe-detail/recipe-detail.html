@@ -1,17 +1,22 @@
 <main class="recipe-detail-container">
-    <h2 class="recipe-info">{{recipe().name}}
-        @if (recipe().isFavorite) {
+    @if (recipe(); as currentRecipe) {
+    <h2 class="recipe-info">{{currentRecipe.name}}
+        @if (currentRecipe.isFavorite) {
         <span> (Favorite)</span>
         }
         <button (click)="incrementServings()">+</button> {{servingsCount()}}
         <button (click)="decrementServings()">-</button>
     </h2>
-    <img [src]="recipe().imgUrl" alt="{{recipe().name}}">
-    <p>{{recipe().description}}</p>
+    <img [src]="currentRecipe.imgUrl" alt="{{currentRecipe.name}}">
+    <p>{{currentRecipe.description}}</p>
     <p>Ingredients:</p>
     <ul>
         @for (ingredient of ingredients(); track $index) {
         <li>{{ingredient.name}} - {{ingredient.quantity}} {{ingredient.unit}}</li>
         }
     </ul>
+    } @else {
+    <p>Recipe not found!</p>
+    }
+
 </main>

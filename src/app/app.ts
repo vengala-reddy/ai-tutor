@@ -6,12 +6,11 @@
  * found in the LICENSE file at https://angular.dev/license
  */
 import {Component, signal, Signal} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
-import { RecipeList } from './recipe-list/recipe-list';
+import {RouterLink, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RecipeList],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
