@@ -4,5 +4,5 @@
     @for (recipe of filteredRecipes(); track $index) {
         <a [routerLink]="['/recipes', recipe.id]"> {{recipe.name}} </a>           
     }
-    <button [routerLink]="'/add-recipe'">Add Recipe</button>
+    <button mat-raised-button color="primary" [routerLink]="'/add-recipe'">Add Recipe</button>
 </section>

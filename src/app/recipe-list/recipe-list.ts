@@ -3,10 +3,11 @@ import { RecipeModel } from '../models';
 import { FormsModule } from '@angular/forms';
 import { Recipe } from '../recipe';
 import { RouterLink } from "@angular/router";
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-recipe-list',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, MatButton],
   templateUrl: './recipe-list.html',
   styleUrl: './recipe-list.css'
 })
