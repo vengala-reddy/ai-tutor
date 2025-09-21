@@ -1,5 +1,8 @@
 <main class="recipe-detail-container">
     <h2 class="recipe-info">{{recipe().name}}
+        @if (recipe().isFavorite) {
+        <span> (Favorite)</span>
+        }
         <button (click)="incrementServings()">+</button> {{servingsCount()}}
         <button (click)="decrementServings()">-</button>
     </h2>

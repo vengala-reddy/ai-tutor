@@ -6,6 +6,7 @@ export const MOCK_RECIPES: RecipeModel[] = [
     name: 'Spaghetti Carbonara',
     description: 'A classic Italian pasta dish.',
     imgUrl: 'https://placehold.co/400x250/E8D2A6/4A2C2A?text=Spaghetti+Carbonara',
+    isFavorite: true,
     ingredients: [
       { name: 'Spaghetti', quantity: 200, unit: 'g' },
       { name: 'Guanciale', quantity: 100, unit: 'g' },
@@ -19,6 +20,7 @@ export const MOCK_RECIPES: RecipeModel[] = [
     name: 'Caprese Salad',
     description: 'A simple and refreshing Italian salad.',
     imgUrl: 'https://placehold.co/400x250/A6E8A8/2A4A2A?text=Caprese+Salad',
+    isFavorite: false,
     ingredients: [
       { name: 'Tomatoes', quantity: 4, unit: 'each' },
       { name: 'Fresh Mozzarella', quantity: 200, unit: 'g' },

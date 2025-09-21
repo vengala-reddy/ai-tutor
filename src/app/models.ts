@@ -9,6 +9,7 @@ export interface Ingredient {
     name: string;
     description: string;
     imgUrl: string;
+    isFavorite: boolean;
     ingredients: Ingredient[];
   }
   
